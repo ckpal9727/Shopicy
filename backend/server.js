@@ -1,4 +1,5 @@
 import express from 'express';
+import path from 'path';
 const port =8000;
 const app=express();
 app.get('/',(req,res)=>{
