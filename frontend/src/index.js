@@ -17,6 +17,11 @@ import HomeScreen from './screens/HomeScreen';
 import ProductScree from './screens/ProductScree';
 import CartScreen from './screens/CartScreen.jsx';
 import LoginScreen from './screens/LoginScreen.jsx';
+import RegisterScreen from './screens/RegisterScreen.jsx';
+import ShippingScreen from './screens/ShippingScreen.jsx';
+import PrivateRoute from './component/PrivateRoute.jsx';
+import PaymentScreen from './screens/PaymentScreen.jsx';
+import PlaceOrderScreen from './screens/PlaceOrderScreen.jsx';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
@@ -24,6 +29,12 @@ const router = createBrowserRouter(
       <Route path='/product/:id' element={<ProductScree />} />
       <Route path='/cart' element={<CartScreen />} />
       <Route path='/login' element={<LoginScreen />} />
+      <Route path='/register' element={<RegisterScreen />} />
+      <Route path='' element={<PrivateRoute />}>
+        <Route path='/shipping' element={<ShippingScreen />} />
+        <Route path='/payment' element={<PaymentScreen />} />
+        <Route path='/placeorder' element={<PlaceOrderScreen />} />
+      </Route>
     </Route>
   )
 )
