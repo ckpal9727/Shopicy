@@ -14,11 +14,12 @@ const HomeScreen = () => {
   const {pageNumber,keyword}=useParams();
   
   const { data, isLoading, error } = useGetProductsQuery({pageNumber,keyword});
+  //console.log(error)
   
   return (
     <>
     {!keyword ?  <ProductCarousel/>: <Link to='/' className='btn btn-light mb-4'>Go Back</Link>}
-      {isLoading ? (<Loader/>) : error ? (<Message variant='danger'>{error?.data.message || error.error}</Message>) : (<>
+      {isLoading ? (<Loader/>) : error ? (<Message variant='danger'>{error?.data?.message}</Message>) : (<>
       
       <h1>Latest Products</h1>
         <Row>

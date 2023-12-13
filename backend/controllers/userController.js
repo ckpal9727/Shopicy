@@ -45,7 +45,7 @@ const registerUser = asyncHandler((async (req, res) => {
         res.status(400);
         throw new Error("wrong user data");
     }
-    res.send('register user');
+   
 }))
 
 //logoutUser/clear cookie
@@ -57,7 +57,7 @@ const logoutUser = asyncHandler((async (req, res) => {
     res.status(200).json({ message: 'Logout successfully' })
 }))
 const getUserProfile = asyncHandler((async (req, res) => {
-    console.log("called get user profile")
+    
     const user = await User.findById(req.user._id);
     if (user) {
         res.status(200).json({
@@ -97,7 +97,7 @@ const updateUserProfile = asyncHandler((async (req, res) => {
     }
 }))
 const getUsers = asyncHandler((async (req, res) => {
-    const users = await User.find({});    
+    const users = await User.find();    
     res.status(200).json(users)
 }))
 const deleteUser = asyncHandler((async (req, res) => {
@@ -121,6 +121,7 @@ const getUserById = asyncHandler((async (req, res) => {
         res.status(200).json(user);
     }else{
         res.status(400);
+        
         throw new Error(" User data not found");
     }
 }))
