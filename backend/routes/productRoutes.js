@@ -1,7 +1,5 @@
 import express from 'express'
 const router =express.Router();
-import asyncHandleer from '../middleware/asyncHandler.js'
-import Product from '../models/productModel.js';
 import { getProducts,getProductById, createProduct, updateProduct, deleteProduct, createProductReview, getTopProduct } from '../controllers/productController.js';
 import {protect,admin} from '../middleware/authMiddleware.js'
 

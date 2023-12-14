@@ -11,10 +11,11 @@ import Paginate from '../component/Paginate'
 
 
 const HomeScreen = () => {
+  
   const {pageNumber,keyword}=useParams();
   
   const { data, isLoading, error } = useGetProductsQuery({pageNumber,keyword});
-  //console.log(error)
+  
   
   return (
     <>
